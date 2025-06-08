@@ -24,7 +24,6 @@
 * **시퀀스 생성**: 30프레임 단위로 좌표를 묶어 시계열 데이터 생성
 * **비지도 학습**: 정상 궤적만으로 AutoEncoder 학습 (라벨 불필요)
 * **이상 탐지**: 재구성 MSE 기준(평균 + 3σ) 초과 시 이상으로 판단
-* **보고서 생성**: HTML 및 PNG 형태로 에러 그래프와 결과 표 자동 생성
 
 ## 🛠️ 설치 및 실행
 
@@ -56,11 +55,6 @@ pip install -r requirements.txt
    ```bash
    python -c "from detect.detect_anomaly import detect_anomaly; detect_anomaly('data/clip_007.mp4', model_path='trained_model.pth')"
    ```
-3. **보고서 생성**
-
-   ```bash
-   python generate_report.py
-   ```
 
 ## 📂 프로젝트 구조
 
@@ -84,18 +78,4 @@ Project/
 * **window\_size**: `preprocess` 모듈의 기본 시퀀스 길이(30) 변경 가능
 * **threshold**: `detect.detect_anomaly()`에서 평균 + kσ 방식으로 자동 계산 또는 고정값 설정
 
-## 📊 리포팅(보고서)
 
-* `generate_report.py` 실행 시 `report/` 폴더에
-
-  * `{video_name}_plot.png` (재구성 에러 그래프)
-  * `{video_name}_report.html` (HTML 테이블 포함 보고서)
-* 브라우저에서 열어 인쇄 기능으로 PDF 변환 가능
-
-## 🤝 기여 안내
-
-버그 리포트와 풀 리퀘스트(PR)를 환영합니다! 이슈(issue)를 열어 개선 아이디어를 남겨주세요.
-
-## 📜 라이선스
-
-이 프로젝트는 **MIT License**를 따릅니다. 자세한 내용은 `LICENSE` 파일을 참고하세요.
