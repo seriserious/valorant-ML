@@ -1,0 +1,14 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Outputs and saved models
+outputs/
+report/
+*.pth
+
+# IDE settings
+.vscode/
